@@ -61,6 +61,10 @@ def main():
     return
 
   vertice = int(sys.argv[2])
+  if (vertice < grafo.arestas):
+    print("Vértice inválido")
+    return
+
   file_name = sys.argv[1]
   file: TextIO = None
 

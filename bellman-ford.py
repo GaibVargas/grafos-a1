@@ -77,4 +77,5 @@ def main():
     print(f"{i + 1}:", end="")
     mensagem = printResultado(vertice, i + 1, a, "")
     print(f"{mensagem[:len(mensagem) - 1]}; d={d[i]}")
+    
 main()

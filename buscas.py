@@ -6,7 +6,7 @@ from Grafo import Grafo
 def buscaLargura(grafo: Grafo, vertice: int):
   if (vertice > grafo.qtdVertices() or vertice <= 0):
     print("Vértice inválido")
-    return
+    return [None, None]
   
   conhecido = []
   distancia = []

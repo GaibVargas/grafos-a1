@@ -21,10 +21,10 @@ def relaxamento(grafo: Grafo, aresta: "tuple[int, int]", distancia: "list[float]
     distancia[u] = distancia[v] + grafo.custo[v][u]
     ancestral[u] = v + 1
 
-def printResultado(origem: int, vertice: int, ancestral: "list[int]", acc_msg: str):
+def constroiMensagens(origem: int, vertice: int, ancestral: "list[int]", acc_msg: str):
   msg = ""
   if (origem != vertice):
-    msg += printResultado(origem, ancestral[vertice - 1], ancestral, acc_msg)
+    msg += constroiMensagens(origem, ancestral[vertice - 1], ancestral, acc_msg)
     return f"{msg} {vertice},"
   return acc_msg
 
@@ -75,7 +75,7 @@ def main():
   for i in range(grafo.qtdVertices()):
     if (i == vertice - 1): continue
     print(f"{i + 1}:", end="")
-    mensagem = printResultado(vertice, i + 1, a, "")
+    mensagem = constroiMensagens(vertice, i + 1, a, "")
     print(f"{mensagem[:len(mensagem) - 1]}; d={d[i]}")
     
 main()

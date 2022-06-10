@@ -81,7 +81,10 @@ class Grafo:
         continue
 
       if (lendo_vertices):
-        [_, rotulo] = linha.split()
+        if (linha.find('"') != -1):
+          rotulo = linha[linha.find('"'):len(linha)-1]
+        else:
+          [_, rotulo] = linha.split()
         self.rotulos.append(rotulo)
       elif (lendo_arestas):
         [origem, destino, custo] = linha.split()

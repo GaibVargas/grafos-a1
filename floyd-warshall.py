@@ -33,6 +33,5 @@ def main():
     for j in range(grafo.qtdVertices()):
       print(distancia[i][j], end=", " if j != len(distancia[i]) - 1 else "")
     print()
-  print(grafo.custo)
 
 main()
